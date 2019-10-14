@@ -1,0 +1,53 @@
+
+var request = require("request");
+var server = require("../../app.js");
+var base_url = "http://localhost:3001";
+
+describe("Test",() => {
+    it("first test", () => {
+        let number = 20;
+        expect(number).toEqual(20);
+    });
+
+    it("second test", () => {
+        let number = 20;
+        expect(number == 200).toBeFalsy();
+    });
+    describe("GET",() => {
+        it("returns status code 200", (done) => {
+            request.get(base_url + "/api/articles", (error, response, body) => {
+                expect(response.statusCode).toBe(200);
+                done();
+            });
+        });
+    });
+});
+
+
+{
+  "article": {
+    "marca": "Seat",
+    "modelo": "Leon",
+    "combustible": "gasolina",
+    "cv": "130",
+    "description": "You have to believe",
+    "precio": "100",
+    "categoria": "premium"
+    "tagList": ["leon", "seat"]
+  }
+}
+
+
+db.deportes.insert({ 
+    "slug" : "da-zn", 
+    "name" : "dazn", 
+    "type" : "deporte",
+    "price" : [ 
+        { "month" : "30" }, 
+        { "year" : "400" }, 
+    ], 
+    "devices" : "movil,pc,tv", 
+    "canales" : "f1, motoGP", 
+    "pais" : "españa", 
+    "calidad" : "fhd"
+})

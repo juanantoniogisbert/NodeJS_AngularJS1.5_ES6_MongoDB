@@ -1,0 +1,20 @@
+<deporte-preview
+  deporte="deporte"
+  ng-repeat="deporte in $ctrl.list">
+</deporte-preview>
+
+<div class="deporte-preview"
+  ng-hide="!$ctrl.loading">
+  Loading deportes...
+</div>
+
+<div class="deporte-preview"
+  ng-show="!$ctrl.loading && !$ctrl.list.length">
+  No deportes are here... yet.
+</div>
+
+<list-pagination
+ total-pages="$ctrl.listConfig.totalPages"
+ current-page="$ctrl.listConfig.currentPage"
+ ng-hide="$ctrl.listConfig.totalPages <= 1">
+</list-pagination>
