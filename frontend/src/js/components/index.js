@@ -30,4 +30,7 @@ componentsModule.component('deporteList', DeporteList);
 import ListPagination from './article-helpers/list-pagination.component';
 componentsModule.component('listPagination', ListPagination);
 
+import ListDepor from './deportes/deportes-details.component';
+componentsModule.component('deportes', ListDepor);
+
 export default componentsModule;

@@ -8,7 +8,7 @@ var DeporteSchema = new mongoose.Schema({
   slug: {type: String, lowercase: true, unique: true},
   name: String,
   type: String,
-  price: [{ type: String }],
+  price:  String,
   devices: String,
   canales: String,
   pais: String,

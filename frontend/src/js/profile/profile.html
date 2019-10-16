@@ -6,9 +6,9 @@
       <div class="row">
         <div class="col-xs-12 col-md-10 offset-md-1">
 
-          <img ng-src="{{::$ctrl.profile.image}}" class="user-img" />
-          <h4 ng-bind="::$ctrl.profile.username"></h4>
-          <p ng-bind="::$ctrl.profile.bio"></p>
+          <img ng-src="{{::$ctrl.isUser.image}}" class="user-img" />
+          <h4 ng-bind="::$ctrl.isUser.username"></h4>
+          <p ng-bind="::$ctrl.isUser.bio"></p>
 
           <a ui-sref="app.settings"
             class="btn btn-sm btn-outline-secondary action-btn"
@@ -53,7 +53,7 @@
         </div>
 
         <!-- List of articles -->
-        <div ui-view></div>
+        <!-- <div ui-view></div> -->
 
 
       </div>

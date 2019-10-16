@@ -41,7 +41,6 @@ passport.use(new GithubStrategy({
   passReqToCallback: true
   },
   function(request, accessToken, refreshToken, profile, done) {
-    // console.log("hola");
     User.findOne({userSocial:profile.id.toString()}, function(err, user) {
         if (err)
           return done(err);

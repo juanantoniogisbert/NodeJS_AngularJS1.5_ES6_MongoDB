@@ -9,14 +9,10 @@ function ProfileConfig($stateProvider) {
     controllerAs: '$ctrl',
     templateUrl: 'profile/profile.html',
     resolve: {
-      profile: function(Profile, $state, $stateParams) {
-        return Profile.get($stateParams.username).then(
-          (profile) => profile,
-          (err) => $state.go('app.home')
-        )
+      auth: function(User) {
+        return User.ensureAuthIs(true);
       }
     }
-
   })
 
   .state('app.profile.main', {

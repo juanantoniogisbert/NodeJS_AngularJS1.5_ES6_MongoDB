@@ -28,7 +28,7 @@ function AuthConfig($stateProvider, $httpProvider) {
   })
   .state('app.sociallogin', {
     url: '/auth/sociallogin',
-    controller: 'AuthCtrl as $ctrl',
+    controller: 'SocialCtrl as $ctrl',
     title: 'Sign up by Social login',
     resolve: {
       auth: function(User) {

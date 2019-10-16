@@ -30,6 +30,18 @@ class SettingsCtrl {
     )
   }
 
+  submitSocial() {
+    this.isSubmitting = true;
+    this._User.update(this.formData).then(
+      (user) => {
+        this._$state.go('app.profile.main', {username:user.username})
+      },
+      (err) => {
+        this.isSubmitting = false;
+        this.errors = err.data.errors;
+      }
+    )
+  }
 }
 
 export default SettingsCtrl;

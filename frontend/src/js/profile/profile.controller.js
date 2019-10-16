@@ -1,16 +1,18 @@
 class ProfileCtrl {
-  constructor(profile, User) {
+  constructor(User) {
     'ngInject';
 
-    this.profile = profile;
-
     if (User.current) {
-      // console.log(this.profile)
-      this.isUser = (User.current.username === this.profile.username);
+      this.isUser = {
+        email: User.current.email,
+        bio: User.current.bio,
+        image: User.current.image,
+        username: User.current.username,
+        nombre: User.current.nombre
+      }
     } else {
       this.isUser = false;
     }
-
   }
 }
 

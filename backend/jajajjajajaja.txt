@@ -23,29 +23,10 @@ describe("Test",() => {
     });
 });
 
-
-{
-  "article": {
-    "marca": "Seat",
-    "modelo": "Leon",
-    "combustible": "gasolina",
-    "cv": "130",
-    "description": "You have to believe",
-    "precio": "100",
-    "categoria": "premium"
-    "tagList": ["leon", "seat"]
-  }
-}
-
-
 db.deportes.insert({ 
-    "slug" : "da-zn", 
     "name" : "dazn", 
     "type" : "deporte",
-    "price" : [ 
-        { "month" : "30" }, 
-        { "year" : "400" }, 
-    ], 
+    "price" : "30", 
     "devices" : "movil,pc,tv", 
     "canales" : "f1, motoGP", 
     "pais" : "españa", 
