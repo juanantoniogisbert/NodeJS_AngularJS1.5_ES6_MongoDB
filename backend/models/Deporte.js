@@ -12,7 +12,8 @@ var DeporteSchema = new mongoose.Schema({
   devices: String,
   canales: String,
   pais: String,
-  calidad: String
+  calidad: String,
+  countFav: {type: Number, default: 0}
   // description: String,
   // image: String,
 });
@@ -40,10 +41,21 @@ DeporteSchema.methods.toJSONFor = function(){
     devices: this.devices,
     canales: this.canales,
     pais: this.pais,
-    calidad: this.calidad
+    calidad: this.calidad,
+    countFav: {type: Number, default: 0}
     // description: this.description,
     // image: this.image
   };
+};
+
+DeporteSchema.methods.upFavCount = function() {
+  var deporte = this;
+
+  return User.count({favorites: {$in: [deporte._id]}}).then(function(count){
+    deporte.countFav = count;
+
+    return deporte.save();
+  });
 };
 
 mongoose.model('Deporte', DeporteSchema);

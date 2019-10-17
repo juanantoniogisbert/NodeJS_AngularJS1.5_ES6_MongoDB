@@ -11,7 +11,7 @@ var UserSchema = new mongoose.Schema({
   userSocial: {type: String, unique: true},
   bio: String,
   image: String,
-  favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Article' }],
+  favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Deporte' }],
   following: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   hash: String,
   salt: String

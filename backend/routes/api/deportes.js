@@ -33,4 +33,34 @@ router.post('/', function(req, res, next) {
   })
 });
 
+// Favorite an deporte
+router.post('/:deporte/favorite', auth.required, function(req, res, next) {
+  var IdDeporte = req.deporte._id;
+
+  User.findById(req.payload.id).then(function(user){
+    if (!user) { return res.sendStatus(401); }
+
+    return user.favorite(IdDeporte).then(function(){
+      return req.deporte.upFavCount().then(function(deporte){
+        return res.json({deporte: deporte.toJSONFor(user)});
+      });
+    });
+  }).catch(next);
+});
+
+// Unfavorite an deporte
+router.delete('/:deporte/favorite', auth.required, function(req, res, next) {
+  var IdDeporte = req.deporte._id;
+
+  User.findById(req.payload.id).then(function (user){
+    if (!user) { return res.sendStatus(401); }
+
+    return user.unfavorite(IdDeporte).then(function(){
+      return req.deporte.upFavCount().then(function(deporte){
+        return res.json({deporte: deporte.toJSONFor(user)});
+      });
+    });
+  }).catch(next);
+});
+
 module.exports = router;
