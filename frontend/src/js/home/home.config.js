@@ -25,7 +25,7 @@ function HomeConfig($stateProvider) {
     title: 'Details Deportes',
     resolve: {
       project: function(Deporte, $stateParams) {
-        console.log(Deporte);
+        // console.log(Deporte);
         return Deporte.getDeporte($stateParams.slug).then(
           (deporte) => deporte
         )

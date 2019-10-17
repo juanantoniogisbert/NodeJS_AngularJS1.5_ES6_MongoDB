@@ -1,10 +1,12 @@
 class FavoriteBtnCtrl {
-  constructor(User, Articles, $state) {
+  constructor(User, Deporte, $state) {
     'ngInject';
 
     this._User = User;
-    this._Articles = Articles;
+    this._deporte = Deporte;
     this._$state = $state;
+
+    // console.log(Deporte);
 
   }
 
@@ -12,25 +14,28 @@ class FavoriteBtnCtrl {
     this.isSubmitting = true;
 
     if (!this._User.current) {
-      this._$state.go('app.register');
+      this._$state.go('app.login');
       return;
     }
 
-    if (this.article.favorited) {
-      this._Articles.unfavorite(this.article.slug).then(
+    
+    if (this.deporte.favorited) {
+      console.log("hola");
+      
+      this._deporte.unfavorite(this.deporte.slug).then(
         () => {
           this.isSubmitting = false;
-          this.article.favorited = false;
-          this.article.favoritesCount--;
+          this.deporte.favorited = false;
+          this.deporte.countFav--;
         }
       )
 
     } else {
-      this._Articles.favorite(this.article.slug).then(
+      this._deporte.favorite(this.deporte.slug).then(
         () => {
           this.isSubmitting = false;
-          this.article.favorited = true;
-          this.article.favoritesCount++;
+          this.deporte.favorited = true;
+          this.deporte.countFav++;
         }
       )
     }
@@ -41,7 +46,7 @@ class FavoriteBtnCtrl {
 
 let FavoriteBtn= {
   bindings: {
-    article: '='
+    deporte: '='
   },
   transclude: true,
   controller: FavoriteBtnCtrl,

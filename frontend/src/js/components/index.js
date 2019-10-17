@@ -24,13 +24,28 @@ componentsModule.component('articlePreview', ArticlePreview);
 import ListPreview from './article-helpers/list-preview.component';
 componentsModule.component('listPreview', ListPreview);
 
-import DeporteList from './article-helpers/deporte-list.component';
-componentsModule.component('deporteList', DeporteList);
-
 import ListPagination from './article-helpers/list-pagination.component';
 componentsModule.component('listPagination', ListPagination);
 
+
+import DeporteList from './deporte-helpers/deporte-list.component';
+componentsModule.component('deportelist', DeporteList);
+
+import DeporteMeta from './deporte-helpers/deporte-meta.component';
+componentsModule.component('deportemeta', DeporteMeta);
+
+import DeportePreview from './deporte-helpers/deporte-preview.component';
+componentsModule.component('deportepreview', DeportePreview);
+
+
+
+
+
+
 import ListDepor from './deportes/deportes-details.component';
-componentsModule.component('deportes', ListDepor);
+componentsModule.component('listdepor', ListDepor);
+
+import BtnDepor from './deportes/deportes-fav.component';
+componentsModule.component('btndepor', BtnDepor);
 
 export default componentsModule;

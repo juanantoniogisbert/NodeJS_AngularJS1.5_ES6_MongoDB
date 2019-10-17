@@ -5,7 +5,7 @@ class HomeCtrl {
     this.appName = AppConstants.appName;
     this._$scope = $scope;
 
-    $scope.deportesInfo = deporte;
+    this.deportesInfo = deporte;
     
   }
 }

@@ -10,7 +10,7 @@ class fromContactCtrl {
         }
 
         this.nvalidContact = function () {
-            console.log("Entra en la funcion");
+            // console.log("Entra en la funcion");
             var data = {
                 name: this.contact.inputName,
                 from: "juanangisbert1996@gmail.com",

@@ -1,0 +1,23 @@
+<div class="deporte-preview">
+    <deporte-meta deporte="$ctrl.deporte">
+      <favorite-btn
+        deporte="$ctrl.deporte"
+        class="pull-xs-right">
+        {{$ctrl.deporte.countFav}}
+      </favorite-btn>
+    </deporte-meta>
+  
+    <a ui-sref="app.deporte({ slug: $ctrl.deporte.slug })" class="preview-link">
+      <h1 ng-bind="$ctrl.deporte.name"></h1>
+      <p ng-bind="$ctrl.deporte.type"></p>
+      <span>Read more...</span><br>
+      <!-- <img ng-src="{{$ctrl.deporte.image1}}"/> -->
+      <ul class="tag-list">
+        <li class="tag-default tag-pill tag-outline"
+          ng-repeat="tag in $ctrl.deporte.tagList">
+          {{tag}}
+        </li>
+      </ul>
+    </a>
+  </div>
+  

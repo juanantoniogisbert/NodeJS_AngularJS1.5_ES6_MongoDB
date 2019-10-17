@@ -20,5 +20,19 @@ export default class Deporte {
     }).then((res) => res.data.projects);
   }
 
+  favorite(slug) {
+    return this._$http({
+      url: this._AppConstants.api + '/deportes/' + slug + '/favorite',
+      method: 'POST'
+    })
+  }
+
+  unfavorite(slug) {
+    return this._$http({
+      url: this._AppConstants.api + '/deportes/' + slug + '/favorite',
+      method: 'DELETE'
+    })
+  }
+
 }
   

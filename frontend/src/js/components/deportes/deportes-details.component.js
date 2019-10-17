@@ -1,25 +1,27 @@
-class deportCompoCtrl {
-    constructor($scope, Deporte) {
-      'ngInject';
-        // console.log(Deporte);    
-        this.deporte = Deporte;
-        this.$scope = $scope;
-        this.runQuery();
-    }
+// class deportCompoCtrl {
+//     constructor($scope, Deporte) {
+//         'ngInject';
 
-    runQuery(){
-        this.deporte.getDeportes().then(
-            (deporte) => {
-                console.log(deporte);
-                this.$scope.deportesInfo = deporte;
-            }
-        )
-    }
-}
+//         this.deporte = Deporte;
+//         this.$scope = $scope;
+//         this.runQuery();
+//     }
 
-    let deporCompo = {
-        controller: deportCompoCtrl,
+//     runQuery(){
+//         this.deporte.getDeportes().then(
+//             (deporte) => {
+//                 // console.log(deporte);
+//                 this.$scope.deportesInfo = deporte;
+//             }
+//         )
+//     }
+// }
+
+    let ListDepor = {
+        bindings: {
+            deportes: '='
+        },
         templateUrl: 'components/deportes/deportes-compo.html'
     }
 
-export default deporCompo;
+export default ListDepor;

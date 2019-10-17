@@ -42,6 +42,7 @@ DeporteSchema.methods.toJSONFor = function(){
     canales: this.canales,
     pais: this.pais,
     calidad: this.calidad,
+    favorited: user ? user.isFavorite(this._id) : false,
     countFav: {type: Number, default: 0}
     // description: this.description,
     // image: this.image
