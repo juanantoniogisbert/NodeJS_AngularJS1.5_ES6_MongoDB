@@ -36,6 +36,19 @@ router.post('/', function(req, res, next) {
   })
 });
 
+// Preload deporte objects on routes with ':deporte'
+router.param('deporte', function(req, res, next, slug) {
+  Deporte.findOne({ slug: slug})
+  .populate('author')
+    .then(function (deporte) {
+      if (!deporte) { return res.sendStatus(404); }
+
+      req.deporte = deporte;
+      
+      return next();
+    }).catch(next);
+});
+
 // Favorite an deporte
 router.post('/:deporte/favorite', auth.required, function(req, res, next) {
   var IdDeporte = req.deporte._id;
@@ -54,10 +67,9 @@ router.post('/:deporte/favorite', auth.required, function(req, res, next) {
 // Unfavorite an deporte
 router.delete('/:deporte/favorite', auth.required, function(req, res, next) {
   var IdDeporte = req.deporte._id;
-
+  
   User.findById(req.payload.id).then(function (user){
     if (!user) { return res.sendStatus(401); }
-
     return user.unfavorite(IdDeporte).then(function(){
       return req.deporte.upFavCount().then(function(deporte){
         return res.json({deporte: deporte.toJSONFor(user)});
@@ -67,6 +79,7 @@ router.delete('/:deporte/favorite', auth.required, function(req, res, next) {
 });
 
 router.get('/', auth.optional, function(req, res, next) {
+  
   var query = {};
   var limit = 20;
   var offset = 0;
@@ -84,15 +97,15 @@ router.get('/', auth.optional, function(req, res, next) {
   }
 
   Promise.all([
-    // req.query.author ? User.findOne({username: req.query.author}) : null,
+    req.query.author ? User.findOne({username: req.query.author}) : null,
     req.query.favorited ? User.findOne({username: req.query.favorited}) : null
   ]).then(function(results){
-    // var author = results[0];
+    var author = results[0];
     var favoriter = results[1];
 
-    // if(author){
-    //   query.author = author._id;
-    // }
+    if(author){
+      query.author = author._id;
+    }
 
     if(favoriter){
       query._id = {$in: favoriter.favorites};
