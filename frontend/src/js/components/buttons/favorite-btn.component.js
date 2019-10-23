@@ -6,7 +6,7 @@ class FavoriteBtnCtrl {
     this._Deporte = Deporte;
     this._$state = $state;
 
-    console.log(Deporte);
+    // console.log(Deporte);
 
   }
 
@@ -17,7 +17,7 @@ class FavoriteBtnCtrl {
       this._$state.go('app.login');
       return;
     }
-    console.log(this.depor);
+    // console.log(this.depor);
     
     if (this.depor.favorited) {
       

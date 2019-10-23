@@ -42,7 +42,7 @@ DeporteSchema.methods.upFavCount = function() {
 };
 
 DeporteSchema.methods.toJSONFor = function(user){
-  console.log("hola"+user);
+  // console.log("hola"+user);
   
   return {
     slug: this.slug,

@@ -31,5 +31,11 @@ servicesModule.service('Toastr', ToastrService);
 import DeporteService from './deportes.service';
 servicesModule.service('Deporte', DeporteService);
 
+// import GraphqlService from './graphql.service';
+// servicesModule.service('GraphQLClient', GraphqlService);
+
+import GraphQLClientService from './graphql.service';
+servicesModule.service('ClientGraphQL', GraphQLClientService);
+
 
 export default servicesModule;

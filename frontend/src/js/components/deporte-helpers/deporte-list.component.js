@@ -3,7 +3,7 @@ class DeporteListCtrl {
     'ngInject';
     
     this._Deportes = Deporte;
-    console.log("Deportes");
+    // console.log("Deportes");
     this.setListTo(this.listConfig);
     this.runQuery();
 
