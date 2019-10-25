@@ -10,7 +10,7 @@ export default class GraphQL {
         this._AppConstants = AppConstants;
         this._$q = $q;
         this._client = new ApolloClient({
-            link: new HttpLink({ uri: this._AppConstants.api + '/graphql/' }),
+            link: new HttpLink({ uri: this._AppConstants.apiGQL + '/graphql/' }),
             cache: new InMemoryCache()
         });
 
