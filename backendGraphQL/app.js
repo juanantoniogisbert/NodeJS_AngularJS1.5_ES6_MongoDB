@@ -45,11 +45,7 @@ if(isProduction){
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./models/User');
-require('./models/Article');
-require('./models/Comment');
 require('./models/Deporte');
-require('./config/passport');
 
 app.use(require('./routes'));
 ///PASSPORT//
