@@ -19,6 +19,7 @@ import './auth';
 import './settings';
 import './editor';
 import './contact';
+import './details';
 
 
 // Create and bootstrap application
@@ -36,6 +37,7 @@ const requires = [
   'app.settings',
   'app.editor',
   'app.contact',
+  'app.details',
   toastr
 ];
 

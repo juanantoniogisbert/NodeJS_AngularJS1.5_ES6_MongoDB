@@ -24,11 +24,11 @@ const QueryResolvers = {
   }
 }
 
-import DeprotesRes from "../../src/resolvers/deportes/deportes.resolver";
+import DeportesRes from "../../src/resolvers/deportes/deportes.resolver";
 
 const resolvers = merge(
   QueryResolvers,
-  DeprotesRes
+  DeportesRes
 );
 
 export default resolvers;

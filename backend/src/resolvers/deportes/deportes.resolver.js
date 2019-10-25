@@ -3,15 +3,12 @@ const Deporte = mongoose.model('Deporte');
 
 const resolvers = {
     Query: {
-        deporte: (root, {slug}) => {
-          return Deporte.findOne({slug: slug}).exec();
-        },
-        deportes: (root, {limit, offset}) => {
-          return Deporte.find().skip(offset).limit(limit).exec();
-        },
-        deportesCount: () => {
-          return Deporte.count().exec();
-        }
+      deporte: (root, {slug}) => {
+        return Deporte.findOne({slug: slug}).exec();
+      },
+      deportes: (root, {limit, offset}) => {
+        return Deporte.find().skip(offset).limit(limit).exec();
+      }
     },
     // Mutation: {
     //     createRestaurant: (root, {input}) => {

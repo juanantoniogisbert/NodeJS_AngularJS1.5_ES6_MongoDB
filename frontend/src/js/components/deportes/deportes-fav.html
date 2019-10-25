@@ -1,4 +1,10 @@
-<h2>Plataforma: {{$ctrl.favorito.name}} | Tipo: {{$ctrl.favorito.type}}</h2>
+<div>
+    <a ui-sref="app.details({slug: $ctrl.favorito.slug})" class="nav-link active">
+        <i class="ion-pound"></i>{{$ctrl.favorito.slug}}
+    </a>
+    <h2>Plataforma: {{$ctrl.favorito.name}} | Tipo: {{$ctrl.favorito.type}}</h2>
+</div>
+
 <favorite-btn
     depor = "$ctrl.favorito"
     {{$ctrl.favorito.countFav}}>

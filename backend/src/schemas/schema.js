@@ -2,7 +2,7 @@ import { gql } from 'apollo-server-express';
 
 const Query = gql`
     scalar Date
-    type Query {
+    extend type Query {
         message: String
     }
     type Mutation {

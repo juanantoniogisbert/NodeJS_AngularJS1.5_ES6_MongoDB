@@ -44,18 +44,41 @@ export default class Deporte {
       method: 'DELETE'
     })
   }
+
+  getDeportes() {
+    let query = `
+    query getDeportes{
+      deportes {
+        slug
+        name
+        type
+      }
+    }`;
+    return this._GQL.get(query);
+  }
+
+  getCACA(slug) {
+    // console.log(slug);
+    
+    let query = `
+      query getDetails {
+        deporte(slug:"${slug}") {
+          slug
+          name
+          type
+          price
+          devices
+          canales
+          pais
+          calidad
+          countFav
+        }
+      }
+    `;
+    return this._GQL.get(query);
+  }
 }
 
-// getGames() {
-//   let query = `
-//   query getGames{
-//     games {
-//       name
-//       description
-//     }
-//   }`;
-//   return this._GQL.get(query);
-// }
 
 
 
