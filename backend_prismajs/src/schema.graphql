@@ -1,0 +1,17 @@
+type Query {
+  game(id: ID!): Game
+  games: [Game!]!
+}
+
+type Game {
+  id: ID!
+  slug: String!
+  name: String!
+  description: String!
+  type: String!
+  favoritesCount: String!
+}
+
+type Mutation {
+  create_game(slug: String!, name: String, description: String!, type: String!, favoritesCount: String!): Game!
+}

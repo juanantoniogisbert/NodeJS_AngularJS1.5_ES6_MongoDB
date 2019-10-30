@@ -7,3 +7,5 @@ backendGraphQL/node_modules
 backendGraphQL/credentials
 backendGraphQL/yarn.lock
 backendGraphQL/packge-lock.json
+
+backend_prismajs/yarn.lock

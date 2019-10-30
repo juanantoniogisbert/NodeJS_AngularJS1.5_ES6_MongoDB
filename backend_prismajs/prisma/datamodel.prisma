@@ -1,0 +1,8 @@
+type Game {
+  id: ID! @id
+  slug: String!
+  name: String
+  description: String
+  type: String
+  favoritesCount: String
+}
