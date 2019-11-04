@@ -31,11 +31,14 @@ servicesModule.service('Toastr', ToastrService);
 import DeporteService from './deportes.service';
 servicesModule.service('Deporte', DeporteService);
 
-// import GraphqlService from './graphql.service';
-// servicesModule.service('GraphQLClient', GraphqlService);
-
 import GraphQLClientService from './graphql.service';
 servicesModule.service('ClientGraphQL', GraphQLClientService);
+
+import PrismaService from './prisma.service';
+servicesModule.service('ClientPrisma', PrismaService);
+
+import GamesPrismaService from './games.service';
+servicesModule.service('Game', GamesPrismaService);
 
 
 export default servicesModule;

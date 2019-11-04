@@ -48,4 +48,10 @@ componentsModule.component('listdepor', ListDepor);
 import BtnDepor from './deportes/deportes-fav.component';
 componentsModule.component('btndepor', BtnDepor);
 
+import ListGame from './games/games-details.component';
+componentsModule.component('listGame', ListGame);
+
+import GamePreview from './games/gamesPre.component';
+componentsModule.component('prevGame', GamePreview);
+
 export default componentsModule;
