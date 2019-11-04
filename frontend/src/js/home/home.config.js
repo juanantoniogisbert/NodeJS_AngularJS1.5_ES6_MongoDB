@@ -29,6 +29,11 @@ function HomeConfig($stateProvider) {
         return Deporte.getDeportes().then(
           (deporte) => deporte.deportes
         )
+      },
+      games: function(Game) {
+          return Game.getGame().then(
+              (games) => games
+          )
       }
     }
   })
