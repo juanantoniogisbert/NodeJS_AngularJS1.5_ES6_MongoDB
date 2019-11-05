@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Orders and Parcels Micro Services</title>
+  </head>
+  <body>
+
+    <h1>Orders and Parcels</h1>
+
+    <h2>
+      Set of Micro Services in Node with
+      <a href="https://moleculer.services" target="_new">Moleculer</a>,
+      <a href="https://nats.io" target="_new">Nats</a>,
+      <a href="https://traefik.io" target="_new">Traefik</a>
+    </h2>
+
+    <h3>To test that the services are working:</h3>
+
+    <p>A basic hello function that return a Hello Parcels! message
+      <div>
+        <a href="http://localhost:3003/api/greeter/hello">
+          <code>http://localhost:3003/api/greeter/hello</code>
+        </a>
+      </div>
+    </p>
+
+    <h3>
+      The links below will return JSON objects so outputing them with a software like
+      <a href="https://www.getpostman.com/" target="_new">Postman</a> will be nicer
+    </h3>
+
+    <p>Process an order and return a list of parcels
+      <div>
+        <a href="http://localhost:3003/api/parcels/order/5bb61dfd79a85ef574665251">
+          <code>http://localhost:3003/api/parcels/order/5bb61dfd79a85ef574665251</code>
+        </a>
+      </div>
+    </p>
+
+    <p>List all items
+      <div>
+        <a href="http://localhost:3003/api/items"> <code>http://localhost:3003/api/items</code> </a>
+      </div>
+    </p>
+
+    <p>Get an item
+      <div>
+        <a href="http://localhost:3003/api/items/5bb619e439d3e99e2e25848d">
+          <code>http://localhost:3003/api/items/5bb619e439d3e99e2e25848d</code>
+        </a>
+      </div>
+    </p>
+
+    <p>List all orders
+      <div>
+        <a href="http://localhost:3003/api/orders"><code>http://localhost:3003/api/orders</code></a>
+      </div>
+    </p>
+
+    <p>Get an order
+      <div>
+        <a href="http://localhost:3003/api/orders/5bb61dfd9e7b7353be4184d2">
+          <code>http://localhost:3003/api/orders/5bb61dfd9e7b7353be4184d2</code>
+        </a>
+      </div>
+    </p>
+
+  </body>
+</html>
