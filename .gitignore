@@ -1,11 +1,12 @@
-backend/node_modules
+node_modules
 backend/credentials
 backend/yarn.lock
 backend/packge-lock.json
 
-backendGraphQL/node_modules
 backendGraphQL/credentials
 backendGraphQL/yarn.lock
 backendGraphQL/packge-lock.json
 
 backend_prismajs/yarn.lock
+backend_moleculerjs/db
+backend_moleculerjs/data

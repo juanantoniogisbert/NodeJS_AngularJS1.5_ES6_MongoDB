@@ -18,14 +18,10 @@ module.exports = {
           '**'
         ],
         aliases: {
-          // 'REST items': 'items',
-          'GET items/:id': 'items.get',
-          'GET items': 'items.getAll',
-          // 'REST orders': 'orders',
-          'GET orders/:id': 'orders.get',
-          'GET orders': 'orders.getAll',
-          'GET parcels/order/:id': 'parcels.order'
-        }
+          'GET music/:id': 'music.get',
+          'GET music': 'music.getAll',
+        },
+        cors: true,
       }
     ],
 

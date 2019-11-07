@@ -40,5 +40,8 @@ servicesModule.service('ClientPrisma', PrismaService);
 import GamesPrismaService from './games.service';
 servicesModule.service('Game', GamesPrismaService);
 
+import MusicService from './music.service';
+servicesModule.service('Music', MusicService);
+
 
 export default servicesModule;

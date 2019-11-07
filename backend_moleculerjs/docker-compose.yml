@@ -21,58 +21,26 @@ services:
       traefik.frontend.entryPoints: "http"
       traefik.frontend.rule: "PathPrefix:/"
 
-  greeter:
+  music:
     build:
       context: .
     image: microservice
     env_file: docker-compose.env
     environment:
       SERVICES:
-        greeter
+        music
     links:
       - nats
     depends_on:
       - nats
 
-  items:
-    build:
-      context: .
-    image: microservice
-    env_file: docker-compose.env
-    environment:
-      SERVICES:
-        items
-    links:
-      - nats
-    depends_on:
-      - nats
-
-  orders:
-    build:
-      context: .
-    image: microservice
-    env_file: docker-compose.env
-    environment:
-      SERVICES:
-        orders
-    links:
-      - nats
-    depends_on:
-      - nats
-
-  parcels:
-    build:
-      context: .
-    image: microservice
-    env_file: docker-compose.env
-    environment:
-      SERVICES:
-        parcels
-    links:
-      - nats
-    depends_on:
-      - nats
-
+  mongo:
+    image: mongo
+    volumes:
+      - ./db:/data/db
+    ports:
+      - '27019:27017'
+      
   nats:
     image: nats
 
