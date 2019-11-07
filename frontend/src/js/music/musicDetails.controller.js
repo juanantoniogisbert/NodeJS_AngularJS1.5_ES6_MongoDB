@@ -1,9 +1,9 @@
 class MusicDetCtrl {
-    constructor(music) {
+    constructor(musics) {
         'ngInject';
   
-        this.MusicDetails = music.music;
-        console.log(this.MusicDetails);
+        // console.log(musics);
+        this.MusicDetails = musics;
     }
 }
     

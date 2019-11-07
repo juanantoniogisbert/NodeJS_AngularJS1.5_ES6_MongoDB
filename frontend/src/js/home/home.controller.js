@@ -1,5 +1,5 @@
 class HomeCtrl {
-  constructor(AppConstants, $scope, deporte, games) {
+  constructor(AppConstants, $scope, deporte, games, music) {
     'ngInject';
 
     // console.log(deporte);
@@ -8,6 +8,7 @@ class HomeCtrl {
 
     this.deportesInfo = deporte;
     this.GamesInfo = games.games;
+    this.MusicInfo = music;
     
   }
 }

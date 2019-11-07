@@ -15,20 +15,20 @@ function MusicConfig($stateProvider) {
                 )
             }
         }
-    // })
-    // .state('app.detailsGame', {
-    //     url: '/game/:id',
-    //     controller: 'GameDetCtrl',
-    //     controllerAs: '$ctrl',
-    //     templateUrl: 'game/detailsGame.html',
-    //     title: 'GameDetails',
-    //     resolve: {
-    //         game: function(Game, $stateParams) {
-    //             return Game.getGameID($stateParams.id).then(
-    //                 (game) => game
-    //             )
-    //         }
-    //     }
+    })
+    .state('app.detailsMusic', {
+        url: '/music/:id',
+        controller: 'MusicDetCtrl',
+        controllerAs: '$ctrl',
+        templateUrl: 'music/detailsMusic.html',
+        title: 'MusicDetails',
+        resolve: {
+            musics: function(Music, $stateParams) {
+                return Music.getMusic($stateParams.id).then(
+                    (musics) => musics
+                )
+            }
+        }
     });
 };
   

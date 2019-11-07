@@ -34,6 +34,11 @@ function HomeConfig($stateProvider) {
           return Game.getGame().then(
               (games) => games
           )
+      },
+      music: function(Music){
+        return Music.getAllMusic().then(
+            (music) => music
+        )
       }
     }
   })

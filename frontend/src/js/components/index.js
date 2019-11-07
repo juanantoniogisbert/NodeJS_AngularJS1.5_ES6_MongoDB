@@ -54,4 +54,10 @@ componentsModule.component('listGame', ListGame);
 import GamePreview from './games/gamesPre.component';
 componentsModule.component('prevGame', GamePreview);
 
+import ListMusic from './musics/musics-details.component';
+componentsModule.component('listMusic', ListMusic);
+
+import MusicPreview from './musics/musicsPre.component';
+componentsModule.component('prevMusic', MusicPreview);
+
 export default componentsModule;
