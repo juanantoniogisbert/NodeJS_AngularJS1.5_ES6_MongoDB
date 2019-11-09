@@ -56,9 +56,10 @@ router.post('/users/login', function(req, res, next){
 });
 
 router.post('/users/register', function(req, res, next){
-  User.find({$or:[{nombre:req.body.user.nombre},{email:req.body.user.email},{username:req.body.user.username}],userSocial:null}).then(function(user){
+  User.find({$or:[{nombre:req.body.user.nombre},{email:req.body.user.email},{username:req.body.user.username}],userSocial:req.body.user.username}).then(function(user){
     var user = new User();
     user.username = req.body.user.username;
+    user.userSocial = req.body.user.username;
     user.email = req.body.user.email;
     user.nombre = req.body.user.nombre;
     user.type = "client";
